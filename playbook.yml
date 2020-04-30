@@ -1,0 +1,16 @@
+---
+ - name: ec2 launch
+   hosts: localhost
+   connection: local
+   tasks:
+     - ec2:
+         key_name: ansible
+         instance_type: t2.micro
+         image: ami-0915e09cc7ceee3ab
+         wait: yes
+         group: web
+         count: 1
+         region: us-east-1
+         vpc_subnet_id: subnet-24bc821a
+         assign_public_ip: yes
+        
